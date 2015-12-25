@@ -1,0 +1,25 @@
+{
+  "name": "circular-doubly-linked-list",
+  "version": "1.0.0",
+  "description": "https://en.wikipedia.org/wiki/Doubly_linked_list#Circular_doubly_linked_lists",
+  "main": "libs/CircularDoublyLinkedList.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julesferreira/circular-doubly-linked-list.git"
+  },
+  "keywords": [
+    "circular"
+  ],
+  "author": "Jules Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julesferreira/circular-doubly-linked-list/issues"
+  },
+  "homepage": "https://github.com/julesferreira/circular-doubly-linked-list#readme",
+  "devDependencies": {
+    "jest-cli": "^0.8.2"
+  }
+}
