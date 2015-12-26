@@ -26,6 +26,24 @@ CircularDoublyLinkedList.prototype = {
 			this.head.prev = node;
 		}
 		this.n++;
+	},
+
+	/**
+	 * remove node
+	 *
+	 * @param {Node} node
+	 */
+	remove: function(node) {
+		if (node.next === node) {
+			this.head = null;
+		} else {
+			node.next.prev = node.prev;
+			node.prev.next = node.next;
+			if (node === this.head) {
+				this.head = node.next;
+			}
+		}
+		this.n--;
 	}
 }
 
