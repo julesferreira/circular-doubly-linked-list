@@ -15,13 +15,13 @@ describe('CircularDoublyLinkedList', function() {
 	});
 
 	describe('insert', function() {
-		var node1 = new Node(1);
-		var node2 = new Node(2);
-		var node3 = new Node(3);
+		var node1 = null;
+		var node2 = null;
+		var node3 = null;
 		var list = new List();
 
 		it('adds a Node to empty list', function() {
-			list.insert(node1);
+			node1 = list.insert(1);
 			expect(list.head.value).toBe(1);
 			expect(list.head.next).toBe(list.head);
 			expect(list.head.prev).toBe(list.head);
@@ -29,7 +29,7 @@ describe('CircularDoublyLinkedList', function() {
 		});
 
 		it('adds a Node to end of list', function() {
-			list.insert(node2);
+			node2 = list.insert(2);
 			var node = list.head.next;
 			expect(node.value).toBe(2);
 			expect(node.next).toBe(list.head);
@@ -38,7 +38,7 @@ describe('CircularDoublyLinkedList', function() {
 		});
 
 		it('links Node between last and first', function() {
-			list.insert(node3);
+			node3 = list.insert(3);
 			var node = list.head.next;
 			expect(node.value).toBe(2);
 			expect(node.next).toBe(node3);
@@ -52,13 +52,10 @@ describe('CircularDoublyLinkedList', function() {
 	});
 
 	describe('remove', function() {
-		var node1 = new Node(1);
-		var node2 = new Node(2);
-		var node3 = new Node(3);
 		var list = new List();
-		list.insert(node1);
-		list.insert(node2);
-		list.insert(node3);
+		var node1 = list.insert(1);
+		var node2 = list.insert(2);
+		var node3 = list.insert(3);
 
 		it('removes a node from list', function() {
 			list.remove(node2);

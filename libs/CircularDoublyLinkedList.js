@@ -1,3 +1,5 @@
+var Node = require('./Node');
+
 function CircularDoublyLinkedList() {}
 
 CircularDoublyLinkedList.prototype = {
@@ -7,16 +9,18 @@ CircularDoublyLinkedList.prototype = {
 	head: null,
 
 	/**
-	 * @type {Number} list count
+	 * @type {number} list count
 	 */
 	n: 0,
 
 	/**
 	 * insert node at 'end' of list (after most recently added node, before first)
 	 *
-	 * @param {Node} node
+	 * @param {mixed} value
+	 * @return {Node}
 	 */
-	insert: function(node) {
+	insert: function(value) {
+		var node = new Node(value);
 		if (this.head === null) {
 			this.head = node.next = node.prev = node;
 		} else {
@@ -26,6 +30,7 @@ CircularDoublyLinkedList.prototype = {
 			this.head.prev = node;
 		}
 		this.n++;
+		return node;
 	},
 
 	/**
