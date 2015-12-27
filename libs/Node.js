@@ -7,7 +7,8 @@ function Node(value) {
 
 Node.prototype = {
 	next: null,
-	prev: null
+	prev: null,
+	value: null
 }
 
 module.exports = Node;
